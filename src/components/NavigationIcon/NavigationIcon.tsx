@@ -1,5 +1,5 @@
 import '@/components/NavigationIcon/NavigationIcon.scss'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { AtSign, HelpCircle, Home, NotebookPen } from 'lucide-react'
 
 const IconMap = {
@@ -16,8 +16,12 @@ type NavigationIconProps = {
 
 export default function NavigationIcon({ iconName, to }: NavigationIconProps) {
   const IconComponent = IconMap[iconName]
+  const pathname = useLocation().pathname
   return (
-    <Link to={to} className="group relative h-16 w-full">
+    <Link
+      to={to}
+      className={`group relative h-16 w-full ${pathname === to || (pathname.includes(to) && to.length !== 1) ? 'text-celestial-blue' : 'text-slate-900'}`}
+    >
       {IconComponent ? (
         <IconComponent className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
       ) : (
