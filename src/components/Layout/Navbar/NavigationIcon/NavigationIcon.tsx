@@ -1,12 +1,21 @@
-import '@/components/NavigationIcon/NavigationIcon.scss'
+import '@/components/Layout/Navbar/NavigationIcon/NavigationIcon.scss'
 import { NavLink, useLocation } from 'react-router-dom'
-import { AtSign, HelpCircle, Home, NotebookPen } from 'lucide-react'
+import {
+  AtSign,
+  HelpCircle,
+  Home,
+  NotebookPen,
+  LogIn,
+  LogOut,
+} from 'lucide-react'
 
 const IconMap = {
   blog: Home,
   about: HelpCircle,
   contact: AtSign,
   projects: NotebookPen,
+  login: LogIn,
+  logout: LogOut,
 }
 
 type NavigationIconProps = {

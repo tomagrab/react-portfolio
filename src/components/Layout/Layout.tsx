@@ -1,6 +1,6 @@
 import '@/components/Layout/Layout.scss'
-import Navbar from '@/components/Navbar/Navbar'
-import Header from '@/components/Header/Header'
+import Navbar from '@/components/Layout/Navbar/Navbar'
+import Header from '@/components/Layout/Header/Header'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Outlet, useLocation } from 'react-router-dom'
 
@@ -13,11 +13,9 @@ const PageNameMap: Record<string, string> = {
 
 export default function Layout() {
   const pathname = useLocation().pathname
-
   const pageName = PageNameMap[pathname]
-
   return (
-    <div className="layout flex min-h-screen w-full">
+    <div className="layout flex w-full">
       <Navbar />
       <div className="layout__main flex-1">
         <Header />

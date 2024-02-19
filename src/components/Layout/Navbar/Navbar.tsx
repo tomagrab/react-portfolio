@@ -1,5 +1,6 @@
-import '@/components/Navbar/Navbar.scss'
-import NavigationIcon from '../NavigationIcon/NavigationIcon'
+import '@/components/Layout/Navbar/Navbar.scss'
+import NavigationIcon from '@/components/Layout/Navbar/NavigationIcon/NavigationIcon'
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
 
 export default function Navbar() {
   return (
@@ -9,6 +10,12 @@ export default function Navbar() {
       </div>
       <NavigationIcon iconName="blog" to="/" />
       <NavigationIcon iconName="about" to="/About" />
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <NavigationIcon iconName="login" to="/LogIn" />
+      </SignedOut>
       <NavigationIcon iconName="contact" to="/Contact" />
       <NavigationIcon iconName="projects" to="/Projects" />
     </aside>

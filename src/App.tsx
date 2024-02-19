@@ -5,6 +5,7 @@ import Blog from '@/routes/Blog/Blog'
 import About from '@/routes/About/About'
 import Contact from '@/routes/Contact/Contact'
 import Projects from '@/routes/Projects/Projects'
+import LogIn from '@/routes/SignIn/SignIn'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Projects" element={<Projects />} />
+        <Route path="/LogIn" element={<LogIn />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Route>
     </Routes>
