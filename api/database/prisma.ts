@@ -39,14 +39,12 @@ main()
 export const createBlogPost = async (
   title: string,
   content: string,
-  published: boolean,
   author: string
 ) => {
   const newPost = await prisma.blogPost.create({
     data: {
       title,
       content,
-      published,
       author,
     },
   })
@@ -72,15 +70,13 @@ export const getBlogPost = async (id: number) => {
 export const updateBlogPost = async (
   id: number,
   title: string,
-  content: string,
-  published: boolean
+  content: string
 ) => {
   const updatedPost = await prisma.blogPost.update({
     where: { id },
     data: {
       title,
       content,
-      published,
     },
   })
 
