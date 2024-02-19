@@ -17,6 +17,9 @@ const config = {
       },
     },
     extend: {
+      height: {
+        screen: ['100vh', '100dvh', '100svh'],
+      },
       colors: {
         'crayola-red': '#ED254E',
         'celestial-blue': '#3E92CC',
