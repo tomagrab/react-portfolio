@@ -8,14 +8,14 @@ export default function NewBlog() {
   const isSignedIn = useUser().isSignedIn
 
   if (!isSignedIn) {
-    return redirect('/')
+    redirect('/')
   }
 
   const userEmail = user?.emailAddresses[0]?.emailAddress
   const isAdministrator = userEmail === import.meta.env.VITE_ADMIN_EMAIL
 
   if (!isAdministrator) {
-    return redirect('/')
+    redirect('/')
   }
 
   return (
